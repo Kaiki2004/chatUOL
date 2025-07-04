@@ -180,3 +180,12 @@ body {
     width: 26px;
     height: 26px;
 }
+#fechar{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    font-style: italic;
+    background-color: #fff;
+}
