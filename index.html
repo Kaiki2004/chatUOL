@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CHAT</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="top">
+            <div><img src="./imagens/logo.png" alt="Logo do chat" /></div>
+            <div>
+                <button onclick="aparecer()" aria-label="Abrir menu lateral">
+                    <img src="./imagens/pessoas.png" alt="Ícone de pessoas" />
+                </button>
+            </div>
+        </div>
+
+        <div class="sidebar esconder">
+            <div class="title">Escolha um contato <br />para enviar mensagem:</div>
+            <ul id="contatos"></ul>
+
+            <div class="section-title">Escolha a visibilidade:</div>
+            <ul id="visibilidade">
+                <li class="option" data-vis="message">
+                    <i class="fas fa-lock-open icon"></i> Público <span class="check">✔</span>
+                </li>
+                <li class="option" data-vis="private_message">
+                    <i class="fas fa-lock icon"></i> Reservadamente <span class="check esconder">✔</span>
+                </li>
+            </ul>
+            <div>
+                <button onclick="esconder()">Fechar</button>
+            </div>
+        </div>
+
+
+        <div id="content"></div>
+
+        <div id="bottom">
+            <div id="input">
+                <input type="text" placeholder="Escreva aqui..." id="mensagem" />
+                <span><p id="menssagem-visu"></p></span>
+            </div>
+            <div>
+                <button onclick="enviarMensagem()" aria-label="Enviar mensagem">
+                    <img src="./imagens/seta.png" alt="Ícone de enviar" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
