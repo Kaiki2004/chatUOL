@@ -47,6 +47,16 @@ function manterConexao() {
   }, 5000);
 }
 
+function atualizarMensagemVisu() {
+  const tipo = visibilidadeSelecionada === "message" ? "público" : "reservadamente";
+  const texto = `Enviando para ${destinatarioSelecionado} (${tipo})`;
+  const msgVisu = document.getElementById("menssagem-visu");
+  if (msgVisu) {
+    msgVisu.innerText = texto;
+  }
+}
+
+
 function selecionarDestinatario(nome) {
   destinatarioSelecionado = nome;
   document.querySelectorAll("#contatos .check").forEach((span) => span.classList.add("esconder"));
@@ -54,8 +64,8 @@ function selecionarDestinatario(nome) {
   opcoes.forEach((li) => {
     if (li.textContent.includes(nome)) {
       li.querySelector(".check").classList.remove("esconder");
+      atualizarMensagemVisu();
     }
-    document.querySelector("#menssagem-visu").innerHTML = `Menssagem: ${li.textContent}` ;
   });
 }
 
@@ -81,9 +91,8 @@ function configurarVisibilidade() {
       document.querySelectorAll("#visibilidade .check").forEach(span => span.classList.add("esconder"));
 
       el.querySelector(".check").classList.remove("esconder");
-      
+
     };
-    document.querySelector("#menssagem-visu").innerHTML = `Menssagem: ${el.textContent}` ;
   });
 }
 
